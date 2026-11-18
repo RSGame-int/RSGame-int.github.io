@@ -1,0 +1,104 @@
+/* Sortaria site: same palette as the game (www/index.html). No external fonts or resources. */
+:root {
+  --bg: #0a0b25;
+  --bg-2: #151545;
+  --bg-3: #2a2580;
+  --bg-4: #4a3fb8;
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, .72);
+  --line: rgba(255, 255, 255, .18);
+  --glass: linear-gradient(180deg, rgba(255, 255, 255, .14), rgba(255, 255, 255, .04));
+  --accent: #9a8cff;
+  --accent-2: #5a48e8;
+  --link: #8fd8ff;
+  --gold-1: #ffd21f;
+  --gold-2: #ff8a1f;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--bg); }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  background: radial-gradient(140% 90% at 50% -10%, var(--bg-4) 0%, var(--bg-3) 28%, var(--bg-2) 60%, var(--bg) 100%) fixed;
+}
+
+a { color: var(--link); text-underline-offset: 2px; }
+a:hover { color: #fff; }
+
+.wrap { max-width: 860px; margin: 0 auto; padding: 24px 16px 64px; }
+
+header.top {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+  margin-bottom: 24px;
+}
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 20px; color: #fff; text-decoration: none; }
+.logo {
+  width: 40px; height: 40px; border-radius: 13px; display: grid; place-items: center;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, .35), 0 3px 0 #3a2bb0;
+}
+.logo i { width: 14px; height: 14px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff 0 18%, #ffd21f 19% 100%); display: block; }
+
+nav.lang { display: flex; gap: 8px; flex-wrap: wrap; }
+nav.lang a, .pill {
+  display: inline-block; padding: 6px 14px; border-radius: 18px; text-decoration: none; color: #fff;
+  background: var(--glass); border: 1px solid var(--line);
+}
+nav.lang a[aria-current="true"] { background: linear-gradient(180deg, var(--accent), var(--accent-2)); }
+
+.card {
+  background: var(--glass); border: 1px solid var(--line); border-radius: 22px;
+  padding: 24px 22px; margin: 18px 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), 0 8px 24px rgba(0, 0, 0, .25);
+}
+
+h1 { font-size: 30px; line-height: 1.2; margin: 0 0 8px; }
+h2 { font-size: 22px; margin: 28px 0 8px; }
+h3 { font-size: 17px; margin: 20px 0 6px; }
+p, li { color: var(--muted); }
+strong { color: #fff; }
+ul { padding-left: 22px; }
+.meta { color: var(--muted); font-size: 14px; }
+.lead { font-size: 18px; color: #fff; }
+
+.btn {
+  display: inline-block; padding: 12px 22px; border-radius: 16px; font-weight: 700; text-decoration: none; color: #2a1600;
+  background: linear-gradient(180deg, var(--gold-1), var(--gold-2));
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, .45), 0 4px 0 #b55a00;
+}
+.btn:hover { color: #000; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 16px; }
+
+/* Decorative tubes on the landing page (pure CSS). */
+.tubes { display: flex; justify-content: center; align-items: flex-end; gap: 14px; margin: 26px 0 8px; }
+.tube {
+  width: 46px; padding: 8px 0 6px; border-radius: 8px 8px 24px 24px; display: flex; flex-direction: column-reverse; align-items: center; gap: 4px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, .04) 30%, rgba(255, 255, 255, 0) 70%, rgba(255, 255, 255, .2));
+  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, .38);
+  min-height: 176px;
+}
+.ball { width: 34px; height: 34px; border-radius: 50%; box-shadow: inset -4px -6px 10px rgba(0, 0, 0, .3), inset 4px 5px 8px rgba(255, 255, 255, .45); }
+.ball.q { background: #3a3f6e; display: grid; place-items: center; font-weight: 700; color: #fff; }
+.c0 { background: #ff3b4f; } .c1 { background: #ffd21f; } .c2 { background: #3ab8ff; }
+.c3 { background: #86d42a; } .c4 { background: #8a4dff; } .c5 { background: #ff3fb4; }
+
+table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); color: var(--muted); }
+th { color: #fff; }
+.table-scroll { overflow-x: auto; }
+
+footer { margin-top: 40px; color: var(--muted); font-size: 14px; text-align: center; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
+
+@media (max-width: 520px) {
+  h1 { font-size: 25px; }
+  .card { padding: 18px 16px; }
+  .tube { width: 38px; min-height: 150px; }
+  .ball { width: 28px; height: 28px; }
+}
